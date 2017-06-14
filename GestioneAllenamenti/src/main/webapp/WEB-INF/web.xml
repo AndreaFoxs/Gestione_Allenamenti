@@ -5,13 +5,13 @@
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" >
 		<display-name>Cliente</display-name>
 		<servlet>
-			<servlet-name>Cliente</servlet-name>
-			<servlet-class>grstionale.condominio</servlet-class>
+			<servlet-name>PaginaCliente</servlet-name>
+			<servlet-class>Gestione.Allenamenti.PaginaCliente</servlet-class>
 		</servlet>
 
 		<servlet-mapping>
-			<servlet-name>Cliente</servlet-name>
-			<url-pattern>/Cliente</url-pattern>
+			<servlet-name>PaginaCliente</servlet-name>
+			<url-pattern>/PaginaCliente</url-pattern>
 		</servlet-mapping>
 		
 		
