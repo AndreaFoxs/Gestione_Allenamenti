@@ -6,9 +6,14 @@ public class VerificaCliente {
 
 	public boolean verificaCodFiscale(Cliente cliente) {
 		
-	    String regexCF = "[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]";
+	   cliente.getNome();
+	   
+		
+		
+		String regexCF = "[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]";
 	    boolean verifica = false;
-	    if (Pattern.matches(regexCF, codiceFiscale)) {
+	    
+		if (Pattern.matches(regexCF, regexCF)) {
 	      verifica = true;
 	    } else {
 	      verifica = false;
