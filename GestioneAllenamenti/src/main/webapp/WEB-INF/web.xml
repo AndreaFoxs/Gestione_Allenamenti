@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		version="3.0"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" >
+		<display-name>Cliente</display-name>
+		<servlet>
+			<servlet-name>Cliente</servlet-name>
+			<servlet-class>grstionale.condominio</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>Cliente</servlet-name>
+			<url-pattern>/Cliente</url-pattern>
+		</servlet-mapping>
+		
+		
+			
+	</web-app>
