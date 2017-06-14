@@ -1,9 +1,27 @@
 package Gestione.Allenamenti;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PersonalTrainer", schema = "gestioneallenamenti")
 public class PersonalTrainer {
-	String nome ;
+	@Id
+	@GeneratedValue
+	private Integer idPT;
+	@Column
+	private String nome ;
+	@Column
 	String settoreAllenamento;
 	
+	
+	
+	public PersonalTrainer() {
+		super();
+	}
 	public PersonalTrainer(String nome, String settoreAllenamento) {
 		super();
 		this.nome = nome;

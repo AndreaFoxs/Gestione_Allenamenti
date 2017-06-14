@@ -1,33 +1,53 @@
 package Gestione.Allenamenti;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Cliente {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+
+
+@Entity
+@Table(name = "Cliente", schema = "gestioneallenamenti")
+public class Cliente {
+	
+	@Id
+	@GeneratedValue
+	private Integer idCliente;
+	@Column
 	private String nome;
+	@Column
 	private String cognome;
-	private String codiceFiscale1;
+	@Column
+	private String codiceFiscale;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idCliente")
+	List<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
 
 	
-
+	
 	public Cliente() {
 		super();
 	}
 
-	public Cliente(String nome, String cognome, String codiceFiscale1, String regex, String codiceFiscale) {
+	public Cliente(String nome, String cognome, String codiceFiscale) {
 		super();
 		this.nome = nome;
 		this.cognome = cognome;
-		this.codiceFiscale1 = codiceFiscale1;
-		this.regex = regex;
 		this.codiceFiscale = codiceFiscale;
 	}
 
-	String regex = "[A-Z]{6}(0-9){2}[A-Z]{1}[1-9]{2}[A-Z]{1}[1-9]{3}[A-Z]{1}";
-	String codiceFiscale = input.nextLine();
-	
+//	String regex = "[A-Z]{6}(0-9){2}[A-Z]{1}[1-9]{2}[A-Z]{1}[1-9]{3}[A-Z]{1}";
+
 	
 	public String getNome() {
 		return nome;
@@ -46,11 +66,11 @@ public class Cliente {
 	}
 
 	public String getCodiceFiscale1() {
-		return codiceFiscale1;
+		return codiceFiscale;
 	}
 
 	public void setCodiceFiscale1(String codiceFiscale1) {
-		this.codiceFiscale1 = codiceFiscale1;
+		this.codiceFiscale = codiceFiscale1;
 	}
 
 	// Pattern pattern = Pattern.compile(regex);
