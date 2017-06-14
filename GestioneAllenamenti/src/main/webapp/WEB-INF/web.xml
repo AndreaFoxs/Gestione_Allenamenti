@@ -14,6 +14,25 @@
 			<url-pattern>/PaginaCliente</url-pattern>
 		</servlet-mapping>
 		
+		<display-name>Registrzione</display-name>
+		<servlet>
+			<servlet-name>Registrazione</servlet-name>
+			<servlet-class>Gestione.Allenamenti.Registrazione</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>Registrazione</servlet-name>
+			<url-pattern>/Registrazione</url-pattern>
+		</servlet-mapping>
 		
-			
+		<display-name>SceltaTrainer</display-name>
+		<servlet>
+			<servlet-name>SceltaTrainer</servlet-name>
+			<servlet-class>Gestione.Allenamenti.SceltaTrainer</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>SceltaTrainer</servlet-name>
+			<url-pattern>/SceltaTrainer</url-pattern>
+		</servlet-mapping>	
 	</web-app>

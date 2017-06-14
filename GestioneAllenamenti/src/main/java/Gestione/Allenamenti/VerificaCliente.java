@@ -4,19 +4,6 @@ import java.util.regex.Pattern;
 
 public class VerificaCliente {
 
-<<<<<<< HEAD
-	public boolean verificaCodFiscale(Cliente cliente) {
-		
-	   cliente.getNome();
-	   
-		
-		
-		String regexCF = "[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]";
-	    boolean verifica = false;
-	    
-		if (Pattern.matches(regexCF, regexCF)) {
-	      verifica = true;
-=======
 	public static boolean verificaCodFiscale(Cliente cliente) {
 		boolean verifica = false;
 		String codFiscale = cliente.getCodiceFiscale().toUpperCase();
@@ -29,7 +16,7 @@ public class VerificaCliente {
 		}
 	    if (Pattern.matches(regexCF, codFiscale)) {
 	    	verifica = true;			
->>>>>>> branch 'master' of https://github.com/AndreaFoxs/Gestione_Allenamenti.git
+
 	    } else {
 	      verifica = false;
 	    }

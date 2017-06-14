@@ -7,7 +7,7 @@
 <title>Cliente</title>
 </head>
 <body>
-<form action="PaginaCliente">
+<form action="PaginaCliente" method="post">
   Nome:<br>
   <input type="text" name="nome"><br>
   Cognome:<br>
