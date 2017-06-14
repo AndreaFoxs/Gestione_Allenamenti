@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Cliente", schema = "gestioneallenamenti")
+@Table(name = "Prenotazione", schema = "gestioneallenamenti")
 public class Prenotazione {
 	@Id
 	@GeneratedValue

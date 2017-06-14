@@ -65,11 +65,11 @@ public class Cliente {
 		this.cognome = cognome;
 	}
 
-	public String getCodiceFiscale1() {
+	public String getCodiceFiscale() {
 		return codiceFiscale;
 	}
 
-	public void setCodiceFiscale1(String codiceFiscale1) {
+	public void setCodiceFiscale(String codiceFiscale1) {
 		this.codiceFiscale = codiceFiscale1;
 	}
 
