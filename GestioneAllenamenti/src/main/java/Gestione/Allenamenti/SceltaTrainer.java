@@ -10,22 +10,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+public class SceltaTrainer extends HttpServlet {
 
-public class SceltaTrainer extends HttpServlet{
-
+	GestionePrenotazione trainer = new GestionePrenotazione();
+	List<String> listaAllenamenti = new ArrayList<>();
+	Prenotazione prenotazione = new Prenotazione("0", 0, "0");
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ServicesCrud crud = new ServicesCrud("jpa-example");
-		List<PersonalTrainer> listaTrainer = new ArrayList<PersonalTrainer>();
-		listaTrainer = crud.jpaRead("select p from personaltrainer").getResultList();
+		listaAllenamenti = trainer.allenamenti();
+		req.setAttribute("listaAllenamenti", listaAllenamenti);
+		RequestDispatcher disp = req.getRequestDispatcher("/sceltaTrainer.jsp");
+		disp.forward(req, resp);
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String tipoAllenamento = req.getParameter("Allenamento");
+		List<String> listaTrainer = trainer.trainerPerAllenamento(tipoAllenamento);
 		req.setAttribute("listaTrainer", listaTrainer);
 		RequestDispatcher disp = req.getRequestDispatcher("/sceltaTrainer.jsp");
 		disp.forward(req, resp);
-	}
-@Override
-protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+//		String giorno  = req.getParameter("giorno");
+//		String ora  = req.getParameter("ora");
+//		ora.replaceAll(":", "");
+//		int orario = Integer.parseInt(ora);
+//		RequestDispatcher disp2 = req.getRequestDispatcher("/sceltaTrainer.jsp");
+//		disp.forward(req, resp);
 	
-}
-
+	}
+	
+	
+ 
 }

@@ -23,13 +23,12 @@ public class PaginaCliente extends HttpServlet {
 		if (VerificaCliente.verificaCodFiscale(cliente)) {
 			System.out.println("codice fiscale OK");
 			crud.jpaCreate(cliente);
+			RequestDispatcher disp = req.getRequestDispatcher("/sceltaTrainer.jsp");
+			disp.forward(req, resp);
 		}else{
 			System.out.println("codice fiscale NO");
 
 		}
-	
-		RequestDispatcher disp = req.getRequestDispatcher("/sceltaTrainer.jsp");
-//		disp.forward(req, resp);
 	}
 	
 	

@@ -11,18 +11,56 @@
 </head>
 <body>
 <form action="SceltaTrainer" method="post">
+  
+  Scegliere il tipo di allenamento<br>
   <select name="Allenamento">
   <% 
-  List<PersonalTrainer> listaTrainer = (ArrayList<PersonalTrainer>)request.getAttribute("listaTrainer"); 
-  if(listaTrainer!=null);
-  for(PersonalTrainer personal : listaTrainer ){
+  List<String> listaAllenamenti = (ArrayList<String>)request.getAttribute("listaAllenamenti"); 
+  if(listaAllenamenti!=null){
+  for(String allenamenti : listaAllenamenti){
  
   %>
-    <option value="<%=personal.getSettoreAllenamento()%>"><%=personal.getSettoreAllenamento()%></option>
-    <%}%>
+    <option value="<%=allenamenti%>"><%=allenamenti%></option>
+    <%}}%>
   </select>
   <br><br>
   <input type="submit" value="Invia">
 </form>
+
+<form action="SceltaTrainer" method="post">
+  
+  Scegliere il trainer<br>
+  <select name="trainer">
+  <% 
+  List<String> listaTrainer = (ArrayList<String>)request.getAttribute("listaTrainer"); 
+  if(listaTrainer!=null){
+  for(String trainer : listaTrainer ){
+ 
+  %>
+    <option value="<%=trainer%>"><%=trainer%></option>
+    <%}}%>
+  </select>
+  <br><br>
+  <input type="submit" value="Invia">
+</form>
+
+<form action="SceltaTrainer" method="post">
+  <br>Scegli il giorno<br>
+  <select name="giorno">
+    <option value="Lunedi">Lunedi</option>
+    <option value="Martedi">Martedi</option>
+    <option value="Mercoledi">Mercoledi</option>
+    <option value="Giovedi">Giovedi</option>
+    <option value="Venerdi">Venerdi</option>
+    <option value="Sabato">Sabato</option>
+    <option value="Domenica">Domenica</option>
+  </select>
+  <br><br>
+  <!-- <input type="submit"> -->
+</form>
+<form action="SceltaTrainer" method="post">
+  Inserisci l'ora della prenotazione es(13:00) :<br>
+  <input type="text" name="ora"><br>
+<input type="submit">
 </body>
 </html>

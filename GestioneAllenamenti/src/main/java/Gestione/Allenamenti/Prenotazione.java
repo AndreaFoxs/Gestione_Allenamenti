@@ -20,7 +20,15 @@ public class Prenotazione {
 	private String data;
 	@Column
 	private int ora;
+	@Column
+	private String trainer;
 	
+	public String getTrainer() {
+		return trainer;
+	}
+	public void setTrainer(String trainer) {
+		this.trainer = trainer;
+	}
 	@ManyToOne
 	@JoinColumn(name = "idCliente")
 	private Cliente idCliente;
@@ -28,10 +36,11 @@ public class Prenotazione {
 	public Prenotazione() {
 		super();
 	}
-	public Prenotazione(String data, int ora) {
+	public Prenotazione(String data, int ora ,String trainer) {
 		super();
 		this.data = data;
 		this.ora = ora;
+		this.trainer=trainer;
 	}
 	public String getData() {
 		return data;
